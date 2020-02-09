@@ -7,11 +7,11 @@ const Palette = ({ name, colors, deletePalette }) => {
       padding: '5px',
       width: '10px',
       height: '20px',
-      background: `${color}`,
+      background: `${color.color}`,
       borderRadius: '1px'
     }
     return (
-      <div style={ background }>
+      <div key={ color.color }style={ background }>
       </div>
     )
   })
@@ -19,7 +19,7 @@ const Palette = ({ name, colors, deletePalette }) => {
   return (
     <>
       <h1 className='white'>{name}</h1>
-      <button id={name} onClick={() => deletePalette(name)} className='randomizer'>Delete This Palette</button>
+      { deletePalette ? <button id={name} onClick={() => deletePalette(name)} className='randomizer'>Delete This Palette</button> : ''}
       <article className='palette-div'>
         {colorDivs}
       </article>
