@@ -64,5 +64,4 @@ class ColorPicker extends Component {
   }
 }
 
-//these will all show up at the same place. need to find a way to make it more dynamic for the pop-up - this is the popOver and cover variables
 export default ColorPicker;
