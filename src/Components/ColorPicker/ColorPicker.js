@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { ChromePicker } from 'react-color';
+import lock from './lock.png';
+import unlock from './unlock.jpeg';
 
 class ColorPicker extends Component {
   constructor(props) {
@@ -18,7 +20,6 @@ class ColorPicker extends Component {
   }
 
   handleChange = (color) => {
-    console.log(color);
     this.props.handleChange(color.hex, this.props.number)
   }
 
@@ -42,6 +43,11 @@ class ColorPicker extends Component {
       background: `${this.props.color}`,
       borderRadius: '1px'
     }
+    const icon = {
+      background: 'white',
+      width: '20px',
+      height: '20px'
+    }
     return (
       <article>
         <div className="color-rectangle" style={ background } onClick={ this.handleClick }></div>
@@ -52,6 +58,7 @@ class ColorPicker extends Component {
           <div className="no-hover" id={`square${this.props.number}`} style={ cover } onClick={ this.handleClose }/>
           <ChromePicker disableAlpha={true} color={this.props.color} onChangeComplete={this.handleChange}/>
           </div> : null }
+        { this.props.locked ? <img style={ icon } alt="lock button" className="lock" src={lock} onClick={() => this.props.lock(this.props.color, this.props.number, this.props.locked)}/> : <img style={ icon } alt="unlock button" className="unlock" src={unlock} onClick={() => this.props.lock(this.props.color, this.props.number, this.props.locked)}/> }
       </article>
     )
   }
