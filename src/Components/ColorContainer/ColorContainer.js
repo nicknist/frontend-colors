@@ -55,7 +55,11 @@ class ColorContainer extends Component {
   }
 
   addPalette = () => {
-    this.setState({ palettes: [...this.state.palettes, { colors: this.state.colors, name: this.state.paletteName }] })
+    if (this.state.palettes.length === 3) {
+      alert('You can only have up to 3 palettes. Please Delete one or make them into a Project!');
+    } else {
+      this.setState({ palettes: [...this.state.palettes, { colors: this.state.colors, name: this.state.paletteName }] })
+    }
   }
 
   deletePalette = async (name) => {
@@ -80,6 +84,7 @@ class ColorContainer extends Component {
         <input type='text' className='palette-name' onChange={(e) => this.handleUpdate(e.target.value)}/>
         <button className='add-palette randomizer' onClick={this.addPalette}>Add These To a Palette</button>
         { this.state.palettes.length === 0 ? "Please add a Palette" : <PaletteContainer palettes={this.state.palettes} deletePalette={this.deletePalette}/>}
+        <p>In Color Container -- Add These Palettes To A Project Incoming</p>
       </>
     )
   }
