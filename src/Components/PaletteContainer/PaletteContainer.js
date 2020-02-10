@@ -4,7 +4,7 @@ import Palette from '../Palette/Palette';
 const PaletteContainer = ({ palettes, deletePalette }) => {
   return (
     <>
-      {palettes.map(palette => <Palette name={palette.name} colors={palette.colors} deletePalette={deletePalette}/>)}
+      {palettes.map(palette => <Palette key={palette.colors[0].color} name={palette.name} colors={palette.colors} deletePalette={deletePalette}/>)}
     </>
   )
 }

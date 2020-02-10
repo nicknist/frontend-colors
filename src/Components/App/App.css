@@ -1,11 +1,16 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  color: white;
 }
 
 .App-logo {
   height: 10vmin;
   pointer-events: none;
+}
+
+img:hover {
+  cursor: pointer;
 }
 
 @media (prefers-reduced-motion: no-preference) {
