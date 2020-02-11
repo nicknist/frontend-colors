@@ -1,93 +1,87 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import ColorPicker from '../ColorPicker/ColorPicker';
 import PaletteContainer from '../PaletteContainer/PaletteContainer';
+import { getFiveRandomColors, handleChange } from '../../helperFunctions';
 
-const getFiveRandomColors = (colors) => {
-  const randomColor = () => `#${Math.floor(Math.random()*16777215).toString(16)}`;
-  if (colors.length === 0) {
-    return [
-      { color: randomColor(), locked: false },
-      { color: randomColor(), locked: false },
-      { color: randomColor(), locked: false },
-      { color: randomColor(), locked: false },
-      { color: randomColor(), locked: false }]
-  }
-  let newArray = [];
-  colors.forEach(color => {
-    if (color.locked) {
-      newArray.push({ color: color.color, locked: true });
-    } else {
-      newArray.push({ color: randomColor(), locked: false });
-    }
-  })
-  return newArray;
-}
+const ColorContainer = () => {
+  const [colors, setColors] = useState(getFiveRandomColors([]));
+  const [palettes, setPalettes] = useState([]);
+  const [paletteName, setPaletteName] = useState('');
 
-class ColorContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      colors: getFiveRandomColors([]),
-      palettes: [],
-      paletteName: ''
-    }
+  const handleChange = (color, id) => {
+    let newColors = [...colors];
+    newColors.splice(id, 1, { color: color, locked: true});
+    setColors(newColors);
   }
 
-  handleClick = () => {
-    this.setState({ colors: getFiveRandomColors(this.state.colors) })
-  }
-
-  handleChange = (color, id) => {
-    let newColors = [...this.state.colors];
-    newColors.splice(id, 1, color);
-    this.setState({ colors: newColors });
-  }
-
-  handleUpdate = (value) => {
-    this.setState({ paletteName: value })
-  }
-
-  lockColor = (colorHex, id, locked) => {
-    let newColors = [...this.state.colors];
+  const lockColor = (colorHex, id, locked) => {
+    let newColors = [...colors];
     let lockedColor = { color: colorHex, locked: !locked };
     newColors.splice(id, 1, lockedColor);
-    this.setState({ colors: newColors })
+    setColors(newColors);
   }
 
-  addPalette = () => {
-    if (this.state.palettes.length === 3) {
-      alert('You can only have up to 3 palettes. Please Delete one or make them into a Project!');
+  const addPalette = () => {
+    if (palettes.length === 3) {
+      alert('You can only have up to 3 paletts. Please delete one or make them into a Project!');
     } else {
-      this.setState({ palettes: [...this.state.palettes, { colors: this.state.colors, name: this.state.paletteName }] })
+      setPalettes([...palettes, { colors: colors, name: paletteName }]);
     }
   }
 
-  deletePalette = async (name) => {
-    let palette = this.state.palettes.findIndex(palette => name === palette.name)
-    let array = [...this.state.palettes];
+  const deletePalette = async (name) => {
+    let palette = palettes.findIndex(palette => name === palette.name);
+    let array = [...palettes];
     array.splice(palette, 1);
-    await this.setState({ palettes: array })
+    await setPalettes(array);
   }
 
-  render() {
-    const colors = this.state.colors;
-    return (
-      <>
-        <section className='container'>
-        <ColorPicker color={colors[0].color} locked={colors[0].locked} handleChange={this.handleChange} lock={this.lockColor} number={0}/>
-        <ColorPicker color={colors[1].color} locked={colors[1].locked} handleChange={this.handleChange} lock={this.lockColor} number={1}/>
-        <ColorPicker color={colors[2].color} locked={colors[2].locked} handleChange={this.handleChange} lock={this.lockColor} number={2}/>
-        <ColorPicker color={colors[3].color} locked={colors[3].locked} handleChange={this.handleChange} lock={this.lockColor} number={3}/>
-        <ColorPicker color={colors[4].color} locked={colors[4].locked} handleChange={this.handleChange} lock={this.lockColor} number={4}/>
-        </section>
-        <button className='randomizer' onClick={this.handleClick}>RANDOMIZE COLORS</button>
-        <input type='text' className='palette-name' onChange={(e) => this.handleUpdate(e.target.value)}/>
-        <button className='add-palette randomizer' onClick={this.addPalette}>Add These To a Palette</button>
-        { this.state.palettes.length === 0 ? "Please add a Palette" : <PaletteContainer palettes={this.state.palettes} deletePalette={this.deletePalette}/>}
-        <p>In Color Container -- Add These Palettes To A Project Incoming</p>
-      </>
-    )
-  }
+  return (
+    <>
+      <section className='container'>
+        <ColorPicker
+          color={colors[0].color}
+          locked={colors[0].locked}
+          handleChange={handleChange}
+          lock={lockColor}
+          number={0}
+        />
+        <ColorPicker
+          color={colors[1].color}
+          locked={colors[1].locked}
+          handleChange={handleChange}
+          lock={lockColor}
+          number={1}
+        />
+        <ColorPicker
+          color={colors[2].color}
+          locked={colors[2].locked}
+          handleChange={handleChange}
+          lock={lockColor}
+          number={2}
+        />
+        <ColorPicker
+          color={colors[3].color}
+          locked={colors[3].locked}
+          handleChange={handleChange}
+          lock={lockColor}
+          number={3}
+        />
+        <ColorPicker
+          color={colors[4].color}
+          locked={colors[4].locked}
+          handleChange={handleChange}
+          lock={lockColor}
+          number={4}
+        />
+      </section>
+      <button className='randomizer' onClick={() => setColors(getFiveRandomColors(colors))}>RANDOMIZE COLORS</button>
+      <input value={paletteName} type='text' className='palette-name' onChange={(e) => setPaletteName(e.target.value)}/>
+      <button className='add-palette randomizer' onClick={addPalette}>Add These To a Palette</button>
+      { palettes.length === 0 ? "Please add a Palette" : <PaletteContainer palettes={palettes} deletePalette={deletePalette}/>}
+      <p>In Color Container -- Add These Palettes To A Project Incoming</p>
+    </>
+  )
 }
 
 export default ColorContainer;
