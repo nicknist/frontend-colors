@@ -5,8 +5,6 @@ import Header from '../Header/Header';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import { getProjects } from '../../apiCalls';
 
-
-//currently hard coded in one project for the time being
 const App = () => {
   const [projects, setProjects] = useState([])
 
