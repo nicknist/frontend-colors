@@ -1,3 +1,13 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Project should match the snapshot 1`] = `ShallowWrapper {}`;
+exports[`Project should match the snapshot 1`] = `
+<Fragment>
+  <h1 />
+  <button
+    className="randomizer delete-project"
+    onClick={[Function]}
+  >
+    NUKE IT
+  </button>
+</Fragment>
+`;

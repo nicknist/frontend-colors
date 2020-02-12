@@ -1,0 +1,127 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ColorContainer should match the snapshot when there are no palettes 1`] = `
+<Fragment>
+  <section
+    className="container"
+  >
+    <ColorPicker
+      color="blue"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={0}
+    />
+    <ColorPicker
+      color="scott"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={true}
+      number={1}
+    />
+    <ColorPicker
+      color="white"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={2}
+    />
+    <ColorPicker
+      color="fosterBlue"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={true}
+      number={3}
+    />
+    <ColorPicker
+      color="scottPurple"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={4}
+    />
+  </section>
+  <button
+    className="randomizer"
+    onClick={[Function]}
+  >
+    RANDOMIZE COLORS
+  </button>
+  <input
+    className="palette-name"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    className="add-palette randomizer"
+    onClick={[Function]}
+  >
+    Add These To a Palette
+  </button>
+  Please add a Palette
+</Fragment>
+`;
+
+exports[`ColorContainer should match the snapshot when there are palettes 1`] = `
+<Fragment>
+  <section
+    className="container"
+  >
+    <ColorPicker
+      color="blue"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={0}
+    />
+    <ColorPicker
+      color="scott"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={true}
+      number={1}
+    />
+    <ColorPicker
+      color="white"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={2}
+    />
+    <ColorPicker
+      color="fosterBlue"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={true}
+      number={3}
+    />
+    <ColorPicker
+      color="scottPurple"
+      handleChange={[Function]}
+      lock={[Function]}
+      locked={false}
+      number={4}
+    />
+  </section>
+  <button
+    className="randomizer"
+    onClick={[Function]}
+  >
+    RANDOMIZE COLORS
+  </button>
+  <input
+    className="palette-name"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+  <button
+    className="add-palette randomizer"
+    onClick={[Function]}
+  >
+    Add These To a Palette
+  </button>
+  Please add a Palette
+</Fragment>
+`;

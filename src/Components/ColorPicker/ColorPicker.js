@@ -1,67 +1,52 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
-import lock from './lock.png';
+import lockIcon from './lock.png';
 import unlock from './unlock.jpeg';
 
-class ColorPicker extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      displayColorPicker: false,
-    };
+const ColorPicker = ({ locked, color, handleChange, lock, number }) => {
+  const [displayColorPicker, setDisplayColorPicker] = useState(false);
+
+  const popOver = {
+    position: 'absolute',
+    zIndex: '2'
+  };
+
+  const cover = {
+    position: 'fixed',
+    top: '0px',
+    right: '0px',
+    bottom: '0px',
+    left: '0px'
+  };
+
+  const background = {
+    margin: '10px',
+    padding: '5px',
+    width: '100px',
+    height: '200px',
+    background: `${color}`,
+    borderRadius: '1px'
   }
 
-  handleClick = () => {
-    this.setState({ displayColorPicker: !this.state.displayColorPicker });
+  const icon = {
+    background: 'white',
+    width: '20px',
+    height: '20px'
   }
 
-  handleClose = () => {
-    this.setState({ displayColorPicker: false })
-  }
-
-  handleChange = (color) => {
-    this.props.handleChange(color.hex, this.props.number)
-  }
-
-  render() {
-    const popOver = {
-      position: 'absolute',
-      zIndex: '2'
-    };
-    const cover = {
-      position: 'fixed',
-      top: '0px',
-      right: '0px',
-      bottom: '0px',
-      left: '0px'
-    };
-    const background = {
-      margin: '10px',
-      padding: '5px',
-      width: '100px',
-      height: '200px',
-      background: `${this.props.color}`,
-      borderRadius: '1px'
-    }
-    const icon = {
-      background: 'white',
-      width: '20px',
-      height: '20px'
-    }
-    return (
-      <article>
-        <div className="color-rectangle" style={ background } onClick={ this.handleClick }></div>
-        <p>{this.props.color}</p>
-        <p>Hex Code</p>
-        { this.state.displayColorPicker ?
-          <div className="color-rectangle" style={ popOver }>
-          <div className="no-hover" id={`square${this.props.number}`} style={ cover } onClick={ this.handleClose }/>
-          <ChromePicker disableAlpha={true} color={this.props.color} onChangeComplete={this.handleChange}/>
-          </div> : null }
-        { this.props.locked ? <img style={ icon } alt="lock button" className="lock" src={lock} onClick={() => this.props.lock(this.props.color, this.props.number, this.props.locked)}/> : <img style={ icon } alt="unlock button" className="unlock" src={unlock} onClick={() => this.props.lock(this.props.color, this.props.number, this.props.locked)}/> }
-      </article>
-    )
-  }
+  return (
+    <article>
+      <div className="color-rectangle" style={background} onClick={() => setDisplayColorPicker(!displayColorPicker)}></div>
+      <p>{color}</p>
+      <p>Hex Code</p>
+      { displayColorPicker ?
+        <div className="color-rectangle" style={popOver}>
+        <div className="no-hover" id={`square${number}`} style={cover} onClick={() => setDisplayColorPicker(false)}/>
+        <ChromePicker className="chrome-picker" disableAlpha={true} color={color} onChangeComplete={(color) => handleChange(color.hex, number)}/>
+        </div> : null }
+      { locked ? <img style={icon} alt="lock button" className="lock" src={lockIcon} onClick={() => lock(color, number, locked)}/> : <img style={icon} alt="unlock button" className="unlock" src={unlock} onClick={() => lock(color, number, locked)}/> }
+    </article>
+  )
 }
 
 export default ColorPicker;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Palette = ({ name, colors, deletePalette, deletePaletteFromProject }) => {
+const Palette = ({ name, colors, deletePalette }) => {
   const colorDivs = colors.map(color => {
     const background = {
       margin: '10px',
@@ -20,12 +20,13 @@ const Palette = ({ name, colors, deletePalette, deletePaletteFromProject }) => {
     <>
       <h1 className='white'>{name}</h1>
       { deletePalette ? <button id={name} onClick={() => deletePalette(name)} className='randomizer'>Delete This Palette</button> : ''}
-      { deletePaletteFromProject ? <button id={name} onClick={() => deletePaletteFromProject(name)} className='randomizer'>Delete This Palette From Project</button> : ''}
       <article className='palette-div'>
         {colorDivs}
       </article>
     </>
   )
 }
+
+// { deletePaletteFromProject ? <button id={name} onClick={() => deletePaletteFromProject(name)} className='randomizer'>Delete This Palette From Project</button> : ''}
 
 export default Palette;
