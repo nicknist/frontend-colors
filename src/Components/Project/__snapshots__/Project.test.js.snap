@@ -3,8 +3,11 @@
 exports[`Project should match the snapshot 1`] = `
 <Fragment>
   <h1 />
-  <p>
-    Delete Project Button incoming
-  </p>
+  <button
+    className="randomizer delete-project"
+    onClick={[Function]}
+  >
+    NUKE IT
+  </button>
 </Fragment>
 `;
