@@ -40,6 +40,6 @@ describe('Palette', () => {
 
     wrapper.find('button').simulate('click');
 
-    expect(mockDeletePalette).toHaveBeenCalledWith('waddup');
+    expect(mockDeletePalette).toHaveBeenCalledWith('waddup', undefined, undefined);
   });
 })

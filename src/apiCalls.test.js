@@ -287,7 +287,7 @@ describe('apiCalls', () => {
     });
 
     it('should return a hard-coded message when called', () => {
-      expect(deletePalette(2)).resolves.toEqual('Oh Hello');
+      expect(deletePalette(2)).resolves.toEqual('Nice Delete');
     });
 
     it('should be called with the correct url and options', () => {
@@ -321,7 +321,7 @@ describe('apiCalls', () => {
     });
 
     it('should return a hard-coded message when called', () => {
-      expect(deleteProject(4)).resolves.toEqual('Oh Waddup');
+      expect(deleteProject(4)).resolves.toEqual('Oh Hello');
     });
 
     it('should called with correct url and options', () => {

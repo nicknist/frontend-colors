@@ -62,15 +62,4 @@ describe('ColorContainer', () => {
 
     expect(wrapper.find('.palette-name').prop('value')).toEqual('waddup');
   });
-
-  it('should call postPalette when there are 3 palettes', () => {
-    const wrapper = shallow(<ColorContainer />);
-    wrapper.find('.add-palette').simulate('click');
-
-    expect(postPalette).toHaveBeenCalled();
-  });
-
-  it('should call postProject when handlePostProject is called', () => {
-    
-  })
-})
+});

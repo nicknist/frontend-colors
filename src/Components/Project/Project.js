@@ -3,8 +3,6 @@ import Palette from '../Palette/Palette';
 import { deleteProject } from '../../apiCalls';
 import { getPalettes } from '../../helperFunctions';
 
-//Also need the deletePalette to take it off the project...
-
 const Project = ({ info }) => {
   const [palettes, setPalettes] = useState([]);
 
