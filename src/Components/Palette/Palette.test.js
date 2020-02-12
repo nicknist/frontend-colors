@@ -42,33 +42,4 @@ describe('Palette', () => {
 
     expect(mockDeletePalette).toHaveBeenCalledWith('waddup');
   });
-
-  it('should match snapshot when there is a deletePaletteFromProject function', () => {
-    const mockColors = [
-      {color: 'white', locked: false}
-    ]
-    const wrapper = shallow(<Palette
-      name="waddup"
-      colors={mockColors}
-      deletePaletteFromProject={jest.fn()}
-    />);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('should run deletePaletteFromProject function when button is clicked', () => {
-    const mockColors = [
-      {color: 'white', locked: false}
-    ]
-    const mockDeletePaletteFromProject = jest.fn();
-    const wrapper = shallow(<Palette
-      name="waddup"
-      colors={mockColors}
-      deletePaletteFromProject={mockDeletePaletteFromProject}
-    />);
-
-    wrapper.find('button').simulate('click');
-
-    expect(mockDeletePaletteFromProject).toHaveBeenCalledWith('waddup');
-  });
 })

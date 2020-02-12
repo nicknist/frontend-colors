@@ -34,40 +34,6 @@ exports[`Palette should match snapshot when there is a deletePalette function 1`
 </Fragment>
 `;
 
-exports[`Palette should match snapshot when there is a deletePaletteFromProject function 1`] = `
-<Fragment>
-  <h1
-    className="white"
-  >
-    waddup
-  </h1>
-  <button
-    className="randomizer"
-    id="waddup"
-    onClick={[Function]}
-  >
-    Delete This Palette From Project
-  </button>
-  <article
-    className="palette-div"
-  >
-    <div
-      key="white"
-      style={
-        Object {
-          "background": "white",
-          "borderRadius": "1px",
-          "height": "20px",
-          "margin": "10px",
-          "padding": "5px",
-          "width": "10px",
-        }
-      }
-    />
-  </article>
-</Fragment>
-`;
-
 exports[`Palette should match the snapshot 1`] = `
 <Fragment>
   <h1
