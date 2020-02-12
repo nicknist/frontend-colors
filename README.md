@@ -44,7 +44,7 @@ If given more time:
 ![colorpickerandlock.gif](src/colorpickerandlock.gif)
 
 #### Lock and Randomize
-![lockandrandomize.gif](src/lockandrandomize.gif)
+![lockandrandomize.gif](src/lockandrandomizer.gif)
 
 #### Add Palette
 ![addpalette.gif](src/addpalette.gif)
