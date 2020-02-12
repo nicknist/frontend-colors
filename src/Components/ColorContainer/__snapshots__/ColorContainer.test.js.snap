@@ -60,9 +60,6 @@ exports[`ColorContainer should match the snapshot when there are no palettes 1`]
     Add These To a Palette
   </button>
   Please add a Palette
-  <p>
-    In Color Container -- Add These Palettes To A Project Incoming
-  </p>
 </Fragment>
 `;
 
@@ -125,40 +122,6 @@ exports[`ColorContainer should match the snapshot when there are palettes 1`] = 
   >
     Add These To a Palette
   </button>
-  <PaletteContainer
-    deletePalette={[Function]}
-    palettes={
-      Array [
-        Object {
-          "colors": Array [
-            Object {
-              "color": "blue",
-              "locked": false,
-            },
-            Object {
-              "color": "scott",
-              "locked": true,
-            },
-            Object {
-              "color": "white",
-              "locked": false,
-            },
-            Object {
-              "color": "fosterBlue",
-              "locked": true,
-            },
-            Object {
-              "color": "scottPurple",
-              "locked": false,
-            },
-          ],
-          "name": "",
-        },
-      ]
-    }
-  />
-  <p>
-    In Color Container -- Add These Palettes To A Project Incoming
-  </p>
+  Please add a Palette
 </Fragment>
 `;
