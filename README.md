@@ -1,68 +1,60 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Front-End Colors!
 
-## Available Scripts
+## Welcome to Nick and Colin's 'Color Party'
 
-In the project directory, you can run:
+Have you ever needed to randomly create colors and put them in 'Projects' but only 3 Color Palettes per Project? Look no further!
 
-### `npm start`
+## Setup
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Feel free to pull down this repo, run 'npm install'
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+To verify that it is setup correctly, run `npm start` in your terminal. Go to `http://localhost:3000/`. Enter `control + c` in your terminal to stop the server at any time.
 
-### `npm test`
+If you want, feel free to run `npm test` to check out our coverage and make sure everything is passing!
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+In addition, this application is deployed! Here's the link:
+[Front-End on Heroku](https://frontend-colors.herokuapp.com/)
 
-### `npm run build`
+Also, here's our deployed backend README: 
+[Backend README](https://github.com/ckoga/backend-colors)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Wins
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+This project had a lot of ups and downs. I would say some of the best things that were accomplished: 
+1. Implementing testing with Hooks as well as for async functions such as fetch. We learned way too late that it's easier to test useEffect and some of the other nuances of Hooks with the React Testing Library, but we just used Jest and Enzyme.
+1. Implementation of Hooks and a fully functional backend was really fun to get the full picture of how to create something from start to finish and deploy it.
+1. This was our first backend/frontend combo that is deployed to heroku!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Challenges
 
-### `npm run eject`
+Some of the bigger challenges of this project:
+1. Testing hooks was one of the biggest things to figure out how to navigate on the frontend side. 
+1. Once we started making decisions on the backend, it pigeon-holed where we could go a little bit on the frontend. I wish we would have thought through both more thoroughly before jumping in too much on one side or the other.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Future Iterations
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+If given more time:
+1. We would create a way to delete a palette within an already created project. This is not necessarily a part of our MVP and would have done that if we had more time
+1. We would have used all of our endpoints, specifically our PATCH methods on the backend.
+1. We would create a way to edit a palette within a project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### ScreenShots
+#### Home Page
+![welcomepage.gif](src/images/home_page.gif)
 
-## Learn More
+#### Home Page with Logged In User
+![welcomepage.gif](src/images/home_page_loggedin.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Login Page - Unsuccessful Login
+![moviepage.gif](src/images/login_error.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### MovieShow Page
+![characterloading.gif](src/images/movie_show.gif)
 
-### Code Splitting
+#### MovieShow Page with Logged In User
+![characterloading.gif](src/images/movie_show_loggedin.gif)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## Collaborators
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[Nick Nist](https://github.com/nicknist) | [Colin Koga](https://github.com/ckoga)
