@@ -40,20 +40,23 @@ If given more time:
 
 
 ### ScreenShots
-#### Home Page
-![welcomepage.gif](src/images/home_page.gif)
+#### ColorPicker and Lock
+![colorpickerandlock.gif](src/colorpickerandlock.gif)
 
-#### Home Page with Logged In User
-![welcomepage.gif](src/images/home_page_loggedin.gif)
+#### Lock and Randomize
+![lockandrandomize.gif](src/lockandrandomize.gif)
 
-#### Login Page - Unsuccessful Login
-![moviepage.gif](src/images/login_error.gif)
+#### Add Palette
+![addpalette.gif](src/addpalette.gif)
 
-#### MovieShow Page
-![characterloading.gif](src/images/movie_show.gif)
+#### Add Project
+![addproject.gif](src/addproject.gif)
 
-#### MovieShow Page with Logged In User
-![characterloading.gif](src/images/movie_show_loggedin.gif)
+#### Delete Project
+![deleteproject.gif](src/deleteproject.gif)
+
+#### Delete Palette
+![deletepalette.gif](src/deletepalette.gif)
 
 ## Collaborators
 
