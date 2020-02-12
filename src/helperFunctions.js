@@ -42,12 +42,12 @@ export const handlePostProject = async (palettes, setPalettes, projectName) => {
   } else {
     let project = {
       title: projectName,
-      palette1_name: palettes[0],
-      palette2_name: palettes[1],
-      palette3_name: palettes[2]
+      palette1_name: palettes[0].name,
+      palette2_name: palettes[1].name,
+      palette3_name: palettes[2].name
     };
     await setPalettes([]);
-    await postProject(project)
+    await postProject(project);
   }
 }
 

@@ -1,5 +1,5 @@
 export const getProjects = () => {
-  return fetch('http://backend-colors.herokuapp.com/api/v1/projects')
+  return fetch('https://backend-colors.herokuapp.com/api/v1/projects')
     .then(response => {
       if (!response.ok) {
         throw Error('Can not find any projects!')
@@ -9,7 +9,7 @@ export const getProjects = () => {
 }
 
 export const getProject = (id) => {
-  return fetch(`http://backend-colors.herokuapp.com/api/v1/projects/${id}`)
+  return fetch(`https://backend-colors.herokuapp.com/api/v1/projects/${id}`)
     .then(response => {
       if(!response.ok) {
         throw Error('Can not find Project');
@@ -19,7 +19,7 @@ export const getProject = (id) => {
 }
 
 export const getPalettes = () => {
-  return fetch('http://backend-colors.herokuapp.com/api/v1/palettes')
+  return fetch('https://backend-colors.herokuapp.com/api/v1/palettes')
     .then(response => {
       if (!response.ok) {
         throw Error('Can not find any palettes!')
@@ -29,7 +29,7 @@ export const getPalettes = () => {
 }
 
 export const getPalette = (id) => {
-  return fetch(`http://backend-colors.herokuapp.com/api/v1/palettes/${id}`)
+  return fetch(`https://backend-colors.herokuapp.com/api/v1/palettes/${id}`)
     .then(response => {
       if(!response.ok) {
         throw Error('Can not find Palette');
@@ -59,7 +59,7 @@ export const postProject = (project) => {
     body: JSON.stringify(project),
     headers: { 'Content-Type': 'application/json' }
   };
-  return fetch('http://backend-colors.herokuapp.com/api/v1/projects', options)
+  return fetch('https://backend-colors.herokuapp.com/api/v1/projects', options)
     .then(response => {
       if (!response.ok) {
         throw Error('Can not post Project')
@@ -69,7 +69,7 @@ export const postProject = (project) => {
 }
 
 export const deletePalette = (id) => {
-  return fetch(`http://backend-colors.herokuapp.com/api/v1/palettes/${id}`, { method: 'DELETE' })
+  return fetch(`https://backend-colors.herokuapp.com/api/v1/palettes/${id}`, { method: 'DELETE' })
     .then(response => {
       if (!response.ok) {
         throw Error('Could not delete that palette')
@@ -79,7 +79,7 @@ export const deletePalette = (id) => {
 }
 
 export const deleteProject = (id) => {
-  return fetch(`http://backend-colors.herokuapp.com/api/v1/projects/${id}`, { method: 'DELETE' })
+  return fetch(`https://backend-colors.herokuapp.com/api/v1/projects/${id}`, { method: 'DELETE' })
     .then(response => {
       if (!response.ok) {
         throw Error('Could not delete that project')
