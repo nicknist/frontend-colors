@@ -1,4 +1,6 @@
-import { randomColor, getFiveRandomColors } from './helperFunctions';
+import { randomColor, getFiveRandomColors, getPalettes } from './helperFunctions';
+import { getPalette } from './apiCalls';
+jest.mock('./apiCalls');
 
 describe('randomColor', () => {
   it('should send back a random string hex code', () => {
@@ -44,6 +46,23 @@ describe('getFiveRandomColors', () => {
     expect(colors[0].color).not.toEqual('blue');
     expect(colors[2].locked).toEqual(false);
     expect(colors[2].color).not.toEqual('white');
-  })
+  });
+});
 
+describe('getPalettes', () => {
+  let mockPalettes;
+
+  beforeEach(() => {
+    mockPalettes = [
+      { thing: 'waddup' },
+      { thing2: 'waddup2' },
+      { thing3: 'waddup3' }
+    ];
+    getPalette.mockImplementation((palette) => palette);
+  });
+
+  it('should call getPalette when ran', () => {
+    getPalettes(mockPalettes);
+    expect(getPalette).toHaveBeenCalled();
+  })
 })
