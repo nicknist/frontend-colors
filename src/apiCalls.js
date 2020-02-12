@@ -44,7 +44,7 @@ export const postPalette = (palette) => {
     body: JSON.stringify(palette),
     headers: { 'Content-Type': 'application/json' }
   };
-  return fetch('http://backend-colors.herokuapp.com/api/v1/palettes', options)
+  return fetch('https://backend-colors.herokuapp.com/api/v1/palettes', options)
     .then(response => {
       if (!response.ok) {
         throw Error('Could not post your Palette')
